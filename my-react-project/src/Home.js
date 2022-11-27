@@ -15,8 +15,8 @@ const Home=()=>{
             TAŞ-KAĞIT-MAKAS OYUNUNA HOŞ GELDİNİZ. AŞAĞIDAKİ BUTONLARDAN SİZE UYGUN OLANINA TIKLAYARAK OYUNA ULAŞABİLİRSİNİZ</h2>
            
         <div className="action">
-            <button to={"/OyuncuBilgisayar"} className="button">Oyuncu VS Bilgisayar</button>
-            <button to={"/OyuncuOyuncu"} className="button">Oyuncu VS Oyuncu</button>
+            <Link to={"/OyuncuBilgisayar"} className="button">Oyuncu VS Bilgisayar</Link>
+            <Link to={"/OyuncuOyuncu"} className="button">Oyuncu VS Oyuncu</Link>
         </div>
     </div>
 }
