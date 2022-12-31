@@ -44,9 +44,10 @@ const initMovies = () => {
     movies.clear();
     counter = 0;
 
-
+    createNewMovie("ali","kemal",1,2);
 
 }
+
 
 module.exports = {initMovies,getAllMovies,
 getAllMoviesSince,updateMovie,getMovie,deleteMovie,createNewMovie}

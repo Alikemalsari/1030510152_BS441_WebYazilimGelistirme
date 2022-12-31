@@ -1,12 +1,13 @@
 import "./App.css";
 import { FaHandRock, FaHandPaper, FaHandScissors } from "react-icons/fa";
-import { useState} from "react";
+import {useEffect, useState} from "react";
 
 const actions = {
     rock: ["scissors", "lizard"],
     paper: ["rock", "spock"],
     scissors: ["paper", "lizard"],
-  
+    //lizard: ["paper", "spock"],
+    //spock: ["scissors", "rock"],
 };
 
 function randomAction() {
@@ -25,7 +26,7 @@ function calculateWinner(action1, action2) {
         return 1;
     }
 
- 
+    // This should never really happen
     return null;
 }
 
@@ -99,7 +100,38 @@ function OyuncuBilgisayar() {
         }
     };
 
-   
+
+
+
+
+    const fetchMovies = async () => {
+        const url = "http://localhost:8081/records";
+
+        let response;
+        let payload;
+
+
+        response = await fetch(url);
+        payload = await response.json();
+        console.log(payload.length);
+
+        for (let i=payload.length-1;i>0;i--){
+
+            if(payload[i].userName2===""){
+                let name1=payload[i].userName1;
+
+                setPlayer1name(name1);
+
+                break;
+            }
+            else;
+        }
+    }
+
+    useEffect(()=>{
+        fetchMovies();
+
+    },[])
     return (
         <div className="center">
             <h1>Oyuncu VS Bilgisayar</h1>
